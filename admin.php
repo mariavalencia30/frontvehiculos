@@ -4,8 +4,8 @@ session_start();
 $api = new UsuarioAPI();
 
 if (!isset($_SESSION['admin'])) {
-  header('Location: login.php');
-  exit;
+    header('Location: login.php');
+    exit;
 }
 ?>
 <a href="logout.php">Cerrar sesión</a>
@@ -27,32 +27,27 @@ $usuarios = $api->obtenerTodos();
 <a href="logout.php">Cerrar sesión</a>
 <h2>Panel del Administrador</h2>
 
-<h3>Registrar Usuario</h3>
-<form method="POST">
-  <input type="hidden" name="crear" value="1">
-  Email: <input type="email" name="email"><br>
-  Nombre: <input type="text" name="nombre"><br>
-  Teléfono: <input type="text" name="telefono"><br>
-  Contraseña: <input type="password" name="contrasena"><br>
-  <button type="submit">Registrar</button>
-</form>
-
-<h3>Actualizar Usuario</h3>
-<form method="POST">
-  <input type="hidden" name="actualizar" value="1">
-  ID: <input type="text" name="id"><br>
-  Email: <input type="email" name="email"><br>
-  Nombre: <input type="text" name="nombre"><br>
-  Teléfono: <input type="text" name="telefono"><br>
-  <button type="submit">Actualizar</button>
-</form>
-
-<h3>Eliminar Usuario</h3>
-<form method="POST">
-  <input type="hidden" name="eliminar" value="1">
-  ID: <input type="text" name="id"><br>
-  <button type="submit">Eliminar</button>
-</form>
-
-<h3>Lista de Usuarios</h3>
-<pre><?php print_r($usuarios); ?></pre>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h2>Bienvenido al Panel de Administrador</h2>
+        <nav>
+            <ul>
+                <li><a href="agregar-carro.php">Agregar Carro</a></li>
+                <li><a href="gestionar-usuarios.php">Gestionar Usuarios</a></li>
+                <li><a href="ventas.php">Ver Ventas</a></li>
+                <li><a href="logout.php">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+        <h3>Opciones de Administración</h3>
+        <p>Aquí puedes agregar vehículos, gestionar usuarios y más.</p>
+    </div>
+</body>
+</html>
