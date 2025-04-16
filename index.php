@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,22 +11,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="car-list-container">
-        <h2>Bienvenido a la Venta de Carros</h2>
-        <div class="car-list">
-            <div class="car-item">
-                <img src="car1.jpg" alt="Carro 1">
-                <h3>Carro Modelo A</h3>
-                <p>Precio: $20,000</p>
-                <a href="detalles.php?id=1">Ver detalles</a>
-            </div>
-            <div class="car-item">
-                <img src="car2.jpg" alt="Carro 2">
-                <h3>Carro Modelo B</h3>
-                <p>Precio: $25,000</p>
-                <a href="detalles.php?id=2">Ver detalles</a>
-            </div>
-        </div>
-    </div>
+
+    <header>
+        <h1>Bienvenidos a la Tienda de Carros</h1>
+    </header>
+
+    <section>
+        <h2>Opciones de Acceso</h2>
+        <p>Elija una opción para acceder a la plataforma:</p>
+        <a href="login.php">Iniciar Sesión</a> |
+        <a href="registro.php">Registrarse</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Venta de Carros. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
